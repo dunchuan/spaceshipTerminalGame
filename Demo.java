@@ -97,7 +97,7 @@ public class Demo extends JFrame {
 			if (count % 20 == 0 ) {
 				rocks = initRocks(width, height);	
 			}  
-			clearScreen();
+			cleanScreen();
 			update(spaceship, rock, screen, dir, width, height);
 			draw(spaceship, rock, rocks, screen);
 			count++;
