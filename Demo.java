@@ -53,26 +53,21 @@ class Rock{
 }
 
 public class Demo extends JFrame {
-	static char dir = '0';//
+	static char dir = '0'; // direction 
 	//static char Predir = '0';
 	static int score = 0;
 	static boolean alive = true;
-	private static JPanel jp = new JPanel();
-	// ask for user input later ***************************************************************************
-	static int width = 20; 
-	static int height = 16;
+	//may ask for user input later ***************************************************************************
+	static int width = 60; 
+	static int height = 20;
 	static int speed = 0;
-	// static 
-	static List<Integer> listX = new ArrayList<>();
-	static Set<Integer> setX = new HashSet<>(); // keep track of generated x coordinates for rocks
-
+	
 	static List<List<Rock>> allRocks = new ArrayList<>();
 	static List<Rock> rocks = initRocks(width, height);
 	static int count = 0;
 	//speed = ?
 
 	public static void main (String[] args) throws IOException, InterruptedException{
-		//System.out.println("START");
 		new Demo();
 		
 		Screen screen = new Screen(width, height);
@@ -83,12 +78,6 @@ public class Demo extends JFrame {
 		// Rock[] rocks // generate random rocks line by line 
 		Rock rock = new Rock(width / 2, height / 2);
 
-		// rocks.set(0, new Rock(11,0));
-		// rocks.set(1, new Rock(12,1));
-		// rocks.set(2, new Rock(11,2));
-		// rocks.set(3, new Rock(1,3));
-
-		//rocks = initRocks(width, height);//generateRocks(width);
 		/* Test with a fixed timer*/
 		// long start = System.currentTimeMillis();
 		// long end = start + 50000; // 60 seconds * 1000 ms/sec
@@ -114,7 +103,7 @@ public class Demo extends JFrame {
 		System.out.println("Game Over");
 	} // end of main
 
-	public static List<Rock> initRocks(int w, int h) {
+	public static List<Rock> initRocks(int w, int h) { // build a rock list 
 		List<Rock> res = new ArrayList<>(); 
 		Random rand = new Random();
 
@@ -125,10 +114,7 @@ public class Demo extends JFrame {
 		for (int i = 0; i < w/2 ; i++) {
 			res.set(i, new Rock(rand.nextInt(w), i));
 		}
-		// res.set(0, new Rock(11,0));
-		// res.set(1, new Rock(11,1));
-		// res.set(2, new Rock(11,2));
-		// res.set(3, new Rock(11,3));
+
 		return res;
 	}
 	public static int updateSpeed(int score) throws InterruptedException {	
@@ -192,6 +178,7 @@ public class Demo extends JFrame {
 			}
 		}
 
+		// update rocks to move down 
 		for (Rock r: rocks) {
 			r.y += 1;  
 		} 
@@ -216,7 +203,6 @@ public class Demo extends JFrame {
 
 		int size = rocks.size();
 		int tempIndex = 0;
-
 
 		if (alive) {
 			for (int i = 0; i < h; i++) {
@@ -257,24 +243,6 @@ public class Demo extends JFrame {
 		System.out.println();
 	}
 
-		// }
-			// try {
-			// 	Thread.sleep(500);
-			// }catch (InterruptedException ex) {
-			// 	Thread.currentThread().interrupt();
-			// }
-		
-		// System.out.print("abcdefg");
-		// System.out.print("\r");
-		// try{Thread.sleep(3000);}
-		// catch (InterruptedException ex) {
-		// 	Thread.currentThread().interrupt();
-		// }
-
-		//System.out.println("Final Score: " + score);
-	//}
-
-
 	public static void clearScreen(){
     //Clears Screen in java
 	    try {
@@ -299,13 +267,13 @@ public class Demo extends JFrame {
 		});
 	}
 
-	public void keyTyped(KeyEvent e){
+	// public void keyTyped(KeyEvent e){
 
-	}
-	public void keyPressed(KeyEvent e){
+	// }
+	// public void keyPressed(KeyEvent e){
 
-	}
-	public void keyReleased(KeyEvent e){
-		//System.out.println("You Released:" + e.getKeyChar());
-	}
+	// }
+	// public void keyReleased(KeyEvent e){
+	// 	//System.out.println("You Released:" + e.getKeyChar());
+	// }
 }
