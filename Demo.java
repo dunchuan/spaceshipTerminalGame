@@ -33,7 +33,6 @@ class Spaceship {
 	void crash() {
 
 	}
-
 }
 
 class Rock{
@@ -99,7 +98,6 @@ public class Demo extends JFrame {
 			
 		}
 
-		
 		System.out.println("Game Over");
 	} // end of main
 
@@ -234,7 +232,6 @@ public class Demo extends JFrame {
 			}
 		}
 		
-
 		for (int i = 0; i < w+2 ; i++)
 			System.out.print("#");
 		System.out.println();
