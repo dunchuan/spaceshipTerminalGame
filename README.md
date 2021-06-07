@@ -11,4 +11,5 @@ To Run the Program:
 How to Play:
 </br>Press w (up) a(left) s(down) d(right) to control spaceship's direction.
 
+Demo Video: https://youtu.be/FJ61_dfhLGI
 ![image](https://github.com/dunchuan/spaceshipTerminalGame/blob/main/demo%20video.gif)
